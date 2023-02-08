@@ -10,11 +10,24 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive(
-      mobile: const Scaffold(
-        body: LoginScreen(),
-      ),
-      tablet: const Scaffold(
-        body: LoginScreen(),
+      mobile: Scaffold(
+          body: Column(
+        children: const [
+          SizedBox(
+            height: 60.0,
+          ),
+          LoginScreen(),
+        ],
+      )),
+      tablet: Scaffold(
+        body: Column(
+          children: const [
+            SizedBox(
+              height: 60.0,
+            ),
+            LoginScreen(),
+          ],
+        ),
       ),
       desktop: Scaffold(
         body: Container(
@@ -27,8 +40,16 @@ class HomeScreen extends StatelessWidget {
               Image.asset(
                 AppImages.indiaFlag,
               ),
-              const SizedBox(width: 100.0,),
-              const SizedBox(width: 500,child: Card(elevation: 10.0,child: LoginScreen(),),),
+              const SizedBox(
+                width: 100.0,
+              ),
+              const SizedBox(
+                width: 500,
+                child: Card(
+                  elevation: 10.0,
+                  child: LoginScreen(),
+                ),
+              ),
             ],
           ),
         ),
